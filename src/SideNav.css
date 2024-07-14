@@ -1,0 +1,111 @@
+/* General styles for the app container */
+
+body {
+    justify-content: center;
+
+    display: flex;
+    }
+
+/* Styles for the sidebar */
+.sidenav {
+    position: FIXED;
+    top: 0;
+    left: 0;
+    bottom: 0; 
+    width: 200px; /* Adjust width as needed */
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    height: 100vh;  
+    padding-top: 20px; /* Space at the top */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add some shadow for better separation */
+}
+
+/* Remove default list styling */
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Styles for the list items */
+.sidenav li {
+    padding: 15px 20px; /* Space around the text */
+}
+
+
+/* Styles for the links */
+.sidenav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the links */
+.sidenav a:hover {
+    background-color: #495057; /* Slightly lighter background on hover */
+}
+
+/* Styles for the main content */
+
+.content  {
+    
+    display: flex;
+    flex: 1;
+    padding: 20px; /* Space around the content */
+    background-color: #0b0b0b92; /* Light background color */
+    color: #c9d6e4; /* Dark text color */
+    margin: 250px;
+    margin-top: 12px;
+    border-radius: 10%;
+    
+}
+
+/* Styles for headings in the content */
+.content h1 {
+    color: #007bff; /* Blue color for headings */
+}
+
+/* Styles for forms in the content */
+/* @media (max-width: 600px) { */
+.content form {
+    background-color: rgb(78, 230, 54); /* White background for forms */
+    padding: 20px;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* } */
+
+/* Styles for form labels */
+.content form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #343a40; /* Dark text color */
+}
+
+/* Styles for form inputs */
+.content form input,
+.content form select {
+    
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+}
+
+/* Styles for form button */
+.content form button {
+    background-color: #007bff; /* Blue background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for form button */
+.content form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

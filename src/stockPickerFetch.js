@@ -13,7 +13,7 @@ const StockPickerFetch = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`http://localhost:8080/api/stocks/live?symbols=${symbols}&source=${source}&earningsOption=${earningsOption}`, {
+            const response = await fetch(`https://stock-picker-921734c094a1.herokuapp.com/api/stocks/live?symbols=${symbols}&source=${source}&earningsOption=${earningsOption}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const StockPickerFetch = () => {
 
     const fetchEarningsData = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/api/stocks/earnings/${source === 'alpha_vantage' ? 'alpha' : 'polygon'}?symbol=${symbols}`, {
+            const response = await fetch(`https://stock-picker-921734c094a1.herokuapp.com/api/stocks/earnings/${source === 'alpha_vantage' ? 'alpha' : 'polygon'}?symbol=${symbols}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

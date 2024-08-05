@@ -15,6 +15,9 @@ const SideNav = () => {
                 <li>
                     <Link to="/scalper">Stock Scalper</Link>
                 </li>
+                <li>
+                    <Link to="/apikey">Api Keys</Link>
+                </li>
             </ul>
         </nav>
     );

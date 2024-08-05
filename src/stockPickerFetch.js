@@ -13,7 +13,8 @@ const StockPickerFetch = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`https://stock-picker-921734c094a1.herokuapp.com/api/stocks/live?symbols=${symbols}&source=${source}&earningsOption=${earningsOption}`, {
+            
+            const response = await fetch(`https://localhost:8443/api/stocks/live?symbols=${symbols}&source=${source}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +44,8 @@ const StockPickerFetch = () => {
 
     const fetchEarningsData = async () => {
         try {
-            const response = await fetch(`https://stock-picker-921734c094a1.herokuapp.com/api/stocks/earnings/${source === 'alpha_vantage' ? 'alpha' : 'polygon'}?symbol=${symbols}`, {
+            const response = await fetch(`https://localhost:8443/api/stocks/earnings/${source === 'alpha_vantage' ? 'alpha' : source === 'polygon' ? 'polygon' : 'finnhub'}?symbol=${symbols}`, {
+            
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -87,6 +89,7 @@ const StockPickerFetch = () => {
                     <select value={source} onChange={(e) => setSource(e.target.value)}>
                         <option value="alpha_vantage">Alpha Vantage</option>
                         <option value="polygon">Polygon</option>
+                        <option value="finnhub">Finnhub</option>
                     </select>
                 </div>
                 <div>
@@ -125,7 +128,10 @@ const StockPickerFetch = () => {
             {earningsData && (
                 <div>
                     <h2>Earnings Data</h2>
-                    <p>Earnings Date: {earningsData.earningsDate}</p>
+                    <p>Earnings Date: {earningsData.earningsDate}
+                    </p>
+                      {/* <p>  Quarter: {earningsData.quarter}
+                         </p> */}
                     {/* Add other fields from earningsData as needed */}
                 </div>
             )}

@@ -1,13 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+function Welcome() {
     return (
-        <div>
-            <h1>Welcome to the Stock Picker App</h1>
-            <p>This app allows you to fetch and analyze stock data from Alpha Vantage and Polygon.</p>
-            <p>Use the Stock Scalper to apply various filters and find stocks that meet your criteria.</p>
+        <div className="welcome-screen">
+            <h1>Welcome to Stock Picker!</h1>
+            <p>
+                Ready to dive into the world of stocks? To unlock the door to endless financial opportunities,
+                you need your key. Enter your API key to get started!
+            </p>
+            <Link to="/apikey">Enter Your Key</Link>
         </div>
     );
-};
+}
 
-export default Home;
+export default Welcome;

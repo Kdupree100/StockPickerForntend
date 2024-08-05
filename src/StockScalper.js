@@ -17,7 +17,7 @@ const StockScalper = () => {
     };
 
     const fetchScalperData = async () => {
-        const response = await fetch('http://localhost:8080/api/scalper', {
+        const response = await fetch('http://localhost:8443/api/scalper', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,6 +47,7 @@ const StockScalper = () => {
                     >
                         <option value="alpha_vantage">Alpha Vantage</option>
                         <option value="polygon">Polygon</option>
+                        <option value="finnhub">Finnhub</option>
                     </select>
                 </div>
                 <div>
